@@ -38,15 +38,16 @@ input[type="text"] {
     padding: 8px;
     border: 1px solid #cccccc;
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 24px;
 }
 
 .ori_choc label {
     display: block;
     margin: auto;
-    font-weight: normal;
+    font-weight: 20px;
     width: 50%;
     margin-bottom: 20px;
+    
 }
 
 .btn {
