@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ablaufdatum</title>
+</head>
+<body>
+    <h1 class="title">SUN</h1>
+    <form id="form">
+        <div class="content">
+            <div class="heute">
+                <label for="today">Heute</label>
+                <input type="date" id="today">
+            </div>
+            <div class="ori_choc">
+                <label>
+                    <input type="radio" name="orig_choc" id="original" value="original">
+                    Original (75)
+                </label>
+                <label>
+                    <input type="radio" name="orig_choc" id="choc" value="choc">
+                    CHOC (90)
+                </label>
+            </div>
+            <div class="heute">
+                <label for="ablauf">Ablaufdatum</label>
+                <input type="text" id="ablauf" readonly>
+            </div>
+        </div>
+        <div class="btn">
+            <button type="button" id="rechnen">Rechnen</button>
+        </div>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
