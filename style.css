@@ -10,9 +10,11 @@ body {
 .title{
     text-align: center;
     background-color: #45a049;
-    width: 95%;
+    max-width: 600px;
     margin: auto;
     margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
 }
 form {
     background: #ffffff;
@@ -21,7 +23,10 @@ form {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin: 10px;
 }
-
+#form{
+    max-width: 500px;
+    margin: auto;
+}
 .content > div {
     margin-bottom: 20px;
 }
@@ -68,4 +73,8 @@ button {
 button:hover {
     background-color: #45a049;
 }
-
+@media (max-width: 500px) {
+    #form{
+        margin: 5px;
+    }
+}
