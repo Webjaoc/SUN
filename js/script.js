@@ -11,6 +11,7 @@ document.getElementById("rechnen").addEventListener("click", function () {
     const todayInput = document.getElementById("today").value;
     const originalSelected = document.getElementById("original").checked;
     const chocSelected = document.getElementById("choc").checked;
+    const performSelected = document.getElementById("performance").checked;
     const ablaufInput = document.getElementById("ablauf");
 
     if (!todayInput) {
@@ -24,7 +25,9 @@ document.getElementById("rechnen").addEventListener("click", function () {
         daysToAdd = 75;
     } else if (chocSelected) {
         daysToAdd = 90;
-    } else {
+    }else if (performSelected) {
+        daysToAdd = 75;
+    }  else {
         alert("Bitte wählen Sie eine Produktart aus (Original oder Chocolate).");
         return;
     }
