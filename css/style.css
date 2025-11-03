@@ -120,15 +120,14 @@ button:hover {
     max-width: 500px;
     margin: auto;
 }.galery_produkt{
-    max-width: 500px;
+    max-width: 350px;
     height: 552px;
     margin: auto;
     border-radius: 10px;
     text-align: center;
 }
 .original{
-    background: url(../assets/images/original.png);
-    background-position: center;
+    background: url(../assets/images/original.png) center;
 }
 .choc{
     background: url(../assets/images/choc.png) center;
