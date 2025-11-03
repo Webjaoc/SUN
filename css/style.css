@@ -127,7 +127,8 @@ button:hover {
     text-align: center;
 }
 .original{
-    background: url(../assets/images/original.png) center;
+    background: url(../assets/images/original.png);
+    background-position: center;
 }
 .choc{
     background: url(../assets/images/choc.png) center;
