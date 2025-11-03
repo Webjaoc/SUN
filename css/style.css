@@ -127,13 +127,13 @@ button:hover {
     text-align: center;
 }
 .original{
-    background: url(../assets/images/original.png);
+    background: url(../assets/images/original.png) center;
 }
 .choc{
-    background: url(../assets/images/choc.png);
+    background: url(../assets/images/choc.png) center;
 }
 .performance{
-    background: url(../assets/images/performance.png);
+    background: url(../assets/images/performance.png) center;
 }
 /*******Responsive********/
 @media (max-width: 500px) {
