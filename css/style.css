@@ -115,6 +115,27 @@ button {
 button:hover {
     background-color: #45a049;
 }
+/*******PRODUKTE********/
+.galey{
+    max-width: 500px;
+    margin: auto;
+}.galery_produkt{
+    max-width: 500px;
+    height: 552px;
+    margin: auto;
+    border-radius: 10px;
+    text-align: center;
+}
+.original{
+    background: url(../assets/images/original.png);
+}
+.choc{
+    background: url(../assets/images/choc.png);
+}
+.performance{
+    background: url(../assets/images/performance.png);
+}
+/*******Responsive********/
 @media (max-width: 500px) {
     #form{
         margin: 5px;
