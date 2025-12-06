@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jorge Oyhenart">
     <link rel="stylesheet" href="../css/style.css">
     <title>SUN AG</title>
 </head>
@@ -16,29 +17,44 @@
             </div>
             <div class="links">
                 <a href="../index.html">> Home</a><hr>
-                <a href="ablaufdatum.html">> Ablaufdatum</a><hr>
-                <a href="produkte.html">> Produkten</a><hr>
-                <a href="#">> Versand</a><hr>
+                <a href="#">> Ablaufdatum</a><hr>
+                <a href="/views/produkte.html">> Produkten</a><hr>
+                <a href="/views/versand.html">> Versand</a><hr>
             </div>            
         </nav>
     </div>
-    <h2 id="versand-title">Versand</h2>
-    <div class="form_content">
-        <form id="formular">
-            <label for="palette_1">
-                <input type="text" id="palette_1" placeholder="P-1">
-            </label>
-            <label for="palette_2">
-                <input type="text" id="palette_2" placeholder="P-2">
-            </label>
-            <label for="palette_3">
-                <input type="text" id="palette_3" placeholder="P-3">
-            </label>
-        </form>
-        <div class="ergebnis" id="ergebnis">0</div>
-    </div>
+    <form id="form">
+        <div class="content">
+            <div class="heute">
+                <label for="today">Heute</label>
+                <input type="date" id="today">
+            </div>
+            <div class="ori_choc">
+                <label>
+                    <input type="radio" name="orig_choc" id="original" value="original">
+                    ORIG (75 tage)
+                </label>
+                <label>
+                    <input type="radio" name="orig_choc" id="performance" value="performance">
+                    Perform (75 tage)
+                </label>
+                <label>
+                    <input type="radio" name="orig_choc" id="choc" value="choc">
+                    CHOC (90 tage)
+                </label>
+            </div>
+            <div class="heute">
+                <label for="ablauf">Ablaufdatum</label>
+                <input type="text" id="ablauf" readonly>
+            </div>
+        </div>
+        <div class="btn">
+            <button type="button" id="rechnen">Rechnen</button>
+        </div>
+    </form>
+    
 
+<script src="../js/script.js"></script>
 <script src="../js/menu.js"></script>
-<script src="../js/versand.js"></script>
 </body>
 </html>
