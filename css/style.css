@@ -59,7 +59,7 @@ hr{
     width: 100%;
 }
 .btns{
-    width: 95%;
+    max-width: 500px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -167,36 +167,73 @@ button:hover {
     max-width: 500px;
     margin: auto;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     padding-left: 5px;
     padding-right: 5px;
 }
 #formular label{
-    width: 30%;
+    width: 45%;
 }
 #formular input{
     padding: 5px 0px 5px 0px;
     text-align: center;
 }
-#ergebnis{
-    max-width: 300px;
+.p1_p2{
+    display: flex;
+    justify-content: space-around;
+}
+.p3_p4{
+    display: flex;
+    justify-content: space-around;
+}
+#ergebnis_mit_pal{
+    width: 45%;
     padding: 5px;
     text-align: center;
     font-size: 30px;
     font-weight: bold;
-    border: 2px solid black;
+    border: 2px solid red;
     margin-top: 5px;
     border-radius: 5px;
+    color: red;
+}
+#ergebnis_ohne_pal{
+    width: 45%;
+    padding: 5px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    border: 2px solid green;
+    margin-top: 5px;
+    border-radius: 5px;
+    color: green;
 }
 .ergebnis{
+    max-width: 500px;
+    display: flex;
+    justify-content: space-around;
     margin: auto;
 }
 #versand-title{
     text-align: center;
 }
+.span{
+    display: flex;
+    justify-content: space-around;
+}
+.span_mit_palette{
+    color: red;
+}
+.span_ohne_palette{
+    color: green;
+}
 /*******Responsive********/
 @media (max-width: 500px) {
     #form{
+        margin: 5px;
+    }
+    .btns{
         margin: 5px;
     }
 }

@@ -25,17 +25,30 @@
     <h2 id="versand-title">Versand</h2>
     <div class="form_content">
         <form id="formular">
-            <label for="palette_1">
-                <input type="text" id="palette_1" placeholder="P-1">
-            </label>
-            <label for="palette_2">
-                <input type="text" id="palette_2" placeholder="P-2">
-            </label>
-            <label for="palette_3">
-                <input type="text" id="palette_3" placeholder="P-3">
-            </label>
+            <div class="p1_p2">
+                <label for="palette_1">
+                    <input type="text" id="palette_1" placeholder="P-1">
+                </label>
+                <label for="palette_2">
+                    <input type="text" id="palette_2" placeholder="P-2">
+                </label>
+            </div>
+            <div class="p3_p4">
+                <label for="palette_3">
+                    <input type="text" id="palette_3" placeholder="P-3">
+                </label>
+                <label for="palette_4">
+                    <input type="text" id="palette_4" placeholder="P-4">
+                </label>
+            </div>
         </form>
-        <div class="ergebnis" id="ergebnis">0</div>
+        <div class="span">
+            <span class="span_mit_palette">mit palette</span><span class="span_ohne_palette">ohne palette</span>
+        </div>
+        <div class="ergebnis">
+            <div class="ergebnisMit" id="ergebnis_mit_pal">0</div>
+            <div class="ergebnisOhne" id="ergebnis_ohne_pal">0</div>
+        </div>
     </div>
 
 <script src="../js/menu.js"></script>
