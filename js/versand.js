@@ -15,10 +15,10 @@ function rechnen(){
     ErgebnisMit.innerHTML = totalMit;
 
     let totalOhne = 
-      Math.max(p1 - 20, 0) +
-      Math.max(p2 - 20, 0) +
-      Math.max(p3 - 20, 0) +
-      Math.max(p4 - 20, 0);
+      Math.max(p1 - 22, 0) +
+      Math.max(p2 - 22, 0) +
+      Math.max(p3 - 22, 0) +
+      Math.max(p4 - 22, 0);
     ErgebnisOhne.innerHTML = totalOhne;
 }
 
