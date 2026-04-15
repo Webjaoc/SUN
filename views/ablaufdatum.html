@@ -25,8 +25,9 @@
     </div>
     <form id="form">
         <div class="content">
+            
             <div class="heute">
-                <label for="today">Heute</label>
+                <label for="today">Datum</label>
                 <input type="date" id="today">
             </div>
             <div class="ori_choc">
@@ -39,7 +40,7 @@
                     Perform (75 tage)
                 </label>
                 <label>
-                    <input type="radio" name="orig_choc" id="black_curr" value="black_curr">
+                    <input type="radio" name="orig_choc" id="black" value="black_curr">
                     Black  (75 tage)
                 </label>
                 <label>
@@ -48,8 +49,16 @@
                 </label>
             </div>
             <div class="heute">
-                <label for="ablauf">Ablaufdatum</label>
-                <input type="text" id="ablauf" readonly>
+                <div class="mode_switch">
+                    <label for="modeToggle" class="switch">
+                        <input type="checkbox" id="modeToggle" placeholder="datum">
+                        <span class="slider"></span>
+                    </label>
+                    <span id="modeLabel">Ablaufdatum</span>
+                </div>
+                <label for="ablauf">
+                    <input type="text" id="ablauf" readonly placeholder="--/--/----">
+                </label>
             </div>
         </div>
         <div class="btn">
