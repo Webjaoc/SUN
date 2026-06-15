@@ -195,6 +195,203 @@ button {
 button:hover {
     background-color: #45a049;
 }
+
+.expiry-page {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top left, rgba(78, 172, 111, 0.16), transparent 38%),
+        #f2f6f4;
+    color: #193127;
+}
+
+.expiry-page .header {
+    background: #173f30;
+    color: #ffffff;
+    box-shadow: 0 8px 24px rgba(23, 63, 48, 0.18);
+}
+
+.expiry-page .menu path {
+    fill: #ffffff;
+}
+
+.expiry-calculator {
+    max-width: 540px;
+    margin: 36px auto;
+    padding: 36px;
+    border: 1px solid #e1ebe5;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(23, 63, 48, 0.1);
+}
+
+.calculator-heading {
+    margin-bottom: 30px;
+}
+
+.calculator-heading h2 {
+    margin: 8px 0;
+    font-size: clamp(26px, 5vw, 34px);
+    letter-spacing: -0.8px;
+}
+
+.calculator-heading p {
+    margin: 0;
+    color: #65756d;
+    line-height: 1.5;
+}
+
+.eyebrow {
+    color: #278452;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+}
+
+.calculator-section {
+    margin: 0 0 24px;
+    padding: 0;
+    border: 0;
+}
+
+.section-label {
+    display: block;
+    margin-bottom: 10px;
+    color: #40564b;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+}
+
+.expiry-calculator input[type="date"] {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px 16px;
+    border: 1px solid #cedbd3;
+    border-radius: 12px;
+    background: #fbfdfc;
+    color: #193127;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.expiry-calculator input[type="date"]:focus-visible {
+    border-color: #278452;
+    outline: 3px solid rgba(39, 132, 82, 0.15);
+}
+
+.duration-options,
+.mode-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.option-card,
+.mode-options label {
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+}
+
+.option-card input,
+.mode-options input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.option-content {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 7px;
+    padding: 22px 16px;
+    border: 2px solid #dce7e0;
+    border-radius: 16px;
+    background: #ffffff;
+    color: #52665b;
+    transition: 0.2s ease;
+}
+
+.option-content strong {
+    color: #193127;
+    font-size: 32px;
+}
+
+.option-card input:checked + .option-content {
+    border-color: #278452;
+    background: #eff9f3;
+    box-shadow: 0 8px 20px rgba(39, 132, 82, 0.12);
+}
+
+.mode-options span {
+    display: flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 10px;
+    border: 1px solid #dce7e0;
+    border-radius: 12px;
+    color: #5c7065;
+    font-size: 14px;
+    text-align: center;
+    transition: 0.2s ease;
+}
+
+.mode-options input:checked + span {
+    border-color: #173f30;
+    background: #173f30;
+    color: #ffffff;
+}
+
+.option-card input:focus-visible + .option-content,
+.mode-options input:focus-visible + span {
+    outline: 3px solid rgba(39, 132, 82, 0.25);
+    outline-offset: 2px;
+}
+
+.expiry-calculator button {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 12px;
+    background: #278452;
+    font-size: 17px;
+    font-weight: 800;
+    box-shadow: 0 10px 22px rgba(39, 132, 82, 0.2);
+}
+
+.expiry-calculator button:hover {
+    background: #1f7044;
+}
+
+.result-card {
+    margin-top: 24px;
+    padding: 22px;
+    border-radius: 16px;
+    background: #173f30;
+    color: #ffffff;
+    text-align: center;
+}
+
+.result-card span,
+.result-card small {
+    display: block;
+    color: #b9d5c5;
+}
+
+.result-card output {
+    display: block;
+    margin: 8px 0;
+    font-size: clamp(30px, 8vw, 42px);
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.result-card output.is-empty {
+    font-size: 20px;
+    letter-spacing: 0;
+}
 /*******PRODUKTE********/
 .galey{
     max-width: 500px;
@@ -288,5 +485,13 @@ button:hover {
     }
     .btns{
         margin: 5px;
+    }
+    .expiry-calculator {
+        margin: 10px;
+        padding: 24px 18px;
+        border-radius: 18px;
+    }
+    .mode-options {
+        grid-template-columns: 1fr;
     }
 }

@@ -1,65 +1,63 @@
-// Fecha actual automática
+const form = document.getElementById("form");
+const dateInput = document.getElementById("today");
+const result = document.getElementById("ablauf");
+const resultLabel = document.getElementById("resultLabel");
+const resultHint = document.getElementById("resultHint");
+
+function getSelectedValue(name) {
+    return document.querySelector(`input[name="${name}"]:checked`).value;
+}
+
+function formatDate(date) {
+    const day = String(date.getUTCDate()).padStart(2, "0");
+    const month = String(date.getUTCMonth() + 1).padStart(2, "0");
+    return `${day}.${month}.${date.getUTCFullYear()}`;
+}
+
+function updateResultText() {
+    const days = getSelectedValue("duration");
+    const isProduction = getSelectedValue("mode") === "production";
+
+    resultLabel.textContent = isProduction
+        ? "Berechnetes Produktionsdatum"
+        : "Berechnetes Ablaufdatum";
+    resultHint.textContent = `Ausgangsdatum ${isProduction ? "minus" : "plus"} ${days} Tage`;
+}
+
+function clearResult() {
+    result.textContent = "Noch nicht berechnet";
+    result.classList.add("is-empty");
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-    const todayInput = document.getElementById("today");
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, '0');
-    const day = String(today.getDate()).padStart(2, '0');
-    todayInput.value = `${year}-${month}-${day}`;
+    dateInput.value = new Date().toISOString().slice(0, 10);
+    updateResultText();
 });
 
-// Cambiar texto del modo
-const toggle = document.getElementById("modeToggle");
-const label = document.getElementById("modeLabel");
-const ablaufLabel = document.querySelector('.ablauf');
-
-toggle.addEventListener("change", () => {
-    label.textContent = toggle.checked ? "Produziert" : "Ablaufdatum";
-    ablaufLabel.textContent = toggle.checked ? "Produktionsdatum" : "Ablaufdatum";
-
+document.querySelectorAll('input[name="duration"], input[name="mode"]').forEach((input) => {
+    input.addEventListener("change", () => {
+        updateResultText();
+        clearResult();
+    });
 });
 
-// Botón calcular
-document.getElementById("rechnen").addEventListener("click", function () {
-    const todayInput = document.getElementById("today").value;
-    const originalSelected = document.getElementById("original").checked;
-    const chocSelected = document.getElementById("choc").checked;
-    const blackSelected = document.getElementById("black").checked;
-    const performSelected = document.getElementById("performance").checked;
+dateInput.addEventListener("change", clearResult);
 
-    const ablaufInput = document.getElementById("ablauf");
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-    if (!todayInput) {
-        alert("Bitte wählen Sie ein Datum aus.");
+    if (!dateInput.value) {
+        dateInput.focus();
         return;
     }
 
-    let days;
+    const days = Number(getSelectedValue("duration"));
+    const isProduction = getSelectedValue("mode") === "production";
+    const [year, month, day] = dateInput.value.split("-").map(Number);
+    const calculatedDate = new Date(Date.UTC(year, month - 1, day));
 
-    if (originalSelected || blackSelected || performSelected) {
-        days = 75;
-    } else if (chocSelected) {
-        days = 90;
-    } else {
-        alert("Bitte wählen Sie eine Produktart aus.");
-        return;
-    }
-
-    const baseDate = new Date(todayInput);
-
-    // 🔥 AQUÍ ESTÁ EL SWITCH
-    if (toggle.checked) {
-        // PRODUCCIÓN (RESTAR)
-        baseDate.setDate(baseDate.getDate() - days);
-    } else {
-        // CADUCIDAD (SUMAR)
-        baseDate.setDate(baseDate.getDate() + days);
-    }
-
-    // Formato
-    const day = String(baseDate.getDate()).padStart(2, '0');
-    const month = String(baseDate.getMonth() + 1).padStart(2, '0');
-    const year = baseDate.getFullYear();
-
-    ablaufInput.value = `${day}.${month}.${year}`;
+    calculatedDate.setUTCDate(calculatedDate.getUTCDate() + (isProduction ? -days : days));
+    result.textContent = formatDate(calculatedDate);
+    result.classList.remove("is-empty");
+    updateResultText();
 });
